@@ -1,0 +1,42 @@
+/* Based on: Blink <https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink> */
+/*Código em C++ para Arduino IDE.
+Montagem:
+1 Arduino UNO;
+1 LED conectado à porta digital 12;
+LED embutido.
+*/
+
+/*Aqui damos um "nome" ao LED e utilizamos um número inteiro para em qual porta ele está*/
+int led1 = 12; //LED externo
+int led2 = 13; //LED embutido
+
+/*Função SETUP: é executada uma única vez quando a placa é energizada.
+Aqui ela é utilizada para indicar que o LED é um componente de saída*/
+void setup() {
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+}
+
+/*Função LOOP: parte do código que será executada (após passar pelo 
+setup na primeira vez) enquanto houver energia no Arduino*/
+
+void loop() {
+  digitalWrite(led1, 1);   // liga o led1
+  delay(1000);             // espera ligado por 1 segundo (conta sempre por milissegundos)
+  digitalWrite(led1, 0);   // desliga o led1
+  delay(1000);             // mantém desligado durante 1 segundo
+
+/*Pisca alternando entre o led1 (porta 12) 
+e o led 2 (embutido na placa, sempre na porta digital 13)*/
+  digitalWrite(led1, 1);
+  digitalWrite(led2, 1);
+  delay(500);
+
+  digitalWrite(led1, 0);
+  digitalWrite(led2, 1);
+  delay(500);  
+
+  digitalWrite(led1, 1);
+  digitalWrite(led2, 0);
+  delay(500);
+}
