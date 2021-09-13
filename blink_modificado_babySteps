@@ -6,7 +6,8 @@ Montagem:
 LED embutido.
 */
 
-/*Aqui damos um "nome" ao LED e utilizamos um número inteiro para em qual porta ele está*/
+/*Aqui damos um "nome" ao LED e utilizamos um número inteiro 
+para indicar em qual porta ele está conectado*/
 int led1 = 12; //LED externo
 int led2 = 13; //LED embutido
 
